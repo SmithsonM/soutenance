@@ -220,7 +220,7 @@ body {
         justify-content: center;
         margin: 16px auto;
         .introRightOne {
-            margin: 16px auto;
+            margin: 0 auto;
             text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
         }
 
@@ -231,7 +231,7 @@ body {
 }
 
 .nivo-controlNav {
-    margin: 16px auto
+    margin: -16px auto 0 auto;
 }
 
 .introBetween {
@@ -337,6 +337,22 @@ footer {
         margin: 0 auto;
     }
 }
+
+//NEWS=======================================================================
+#newsOne {
+    @include containerPhone;
+    @include flexMid;
+    .title {
+        margin: 16px auto;
+    }
+}
+
+
+
+
+
+
+
 //A PROPOS===================================================================
 #aProposOne {
     @include containerPhone;

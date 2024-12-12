@@ -1,0 +1,567 @@
+//ROOT==========================================================================
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: var(--fontSize);
+}
+
+:root {
+    --font1: 'Style Script';
+    --font2: 'Roboto Condensed';
+    --fontSize: 14px;
+    --titleColour: #EFA043;
+}
+
+//FONTS=============================================================================
+/* style-script-regular - latin */
+@font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Style Script';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/style-script-v11-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* roboto-condensed-regular - latin */
+@font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Roboto Condensed';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/roboto-condensed-v27-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+// MIXINS ==========================================================================
+@mixin header {
+    display: flex;
+    flex-direction: column;
+    background-image: url(/images/Dancing\ feet.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 0 0 16px 16px;
+    box-shadow: 0 0 8px black;
+    width: 100%;
+    max-width: 100%;
+    height: 200px;
+    -webkit-border-radius: 0 0 16px 16px;
+    -moz-border-radius: 0 0 16px 16px;
+    -ms-border-radius: 0 0 16px 16px;
+    -o-border-radius: 0 0 16px 16px;
+}
+
+@mixin footer {
+    background-color: rgba(128, 128, 128, 0.5);
+    border-radius: 16px 16px 0 0;
+    box-shadow: 0 0 8px;
+    height: 100px;
+    width: 100%;
+    -webkit-border-radius: 16px 16px 0 0;
+    -moz-border-radius: 16px 16px 0 0;
+    -ms-border-radius: 16px 16px 0 0;
+    -o-border-radius: 16px 16px 0 0;
+}
+
+@mixin containerPhone {
+    max-width: 1000px;
+    width: 100%;
+}
+
+@mixin title {
+    font-family: var(--font1);
+    font-size: 2vh;
+    color: var(--titleColour);
+    text-shadow: 2px 1px 2px #000000;
+    margin: 0 auto;
+}
+
+@mixin menuLinks {
+    color: black;
+    text-align: center;
+    display: inline-block;
+    background-color: white;
+    border-radius: 24x;
+    padding: 16px 32px;
+    width: 296px;
+    z-index: 2;
+    -webkit-border-radius: 24x;
+    -moz-border-radius: 24x;
+    -ms-border-radius: 24x;
+    -o-border-radius: 24x;
+}
+
+@mixin p {
+    font-family: var(--font2);
+    letter-spacing: 1px;
+    line-height: 20px ;
+    text-align: justify;
+    width: 80%;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+@mixin persoCard {
+    
+}
+
+@mixin flexMid {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+// MOBILE===============================================================
+
+//header================================================================
+
+#header {
+    @include header();
+    .logo {
+        color: var(--titleColour);
+        font-family: var(--font1);
+        font-weight: 400;
+        text-shadow: 2px 1px 2px#000000;
+        padding: 16px;
+        img {
+            height: 25px;
+            transform: scaleX(-1);
+            -webkit-transform: scaleX(-1);
+            -moz-transform: scaleX(-1);
+            -ms-transform: scaleX(-1);
+            -o-transform: scaleX(-1);
+            rotate: 310deg;
+            position: absolute;
+            left: 6px;
+            top: 12px;
+        }
+    }
+    #menuMobile {
+        display: flex;
+        justify-content: flex-end;
+        
+        i {
+            color: #EFA043;
+            margin: 72px 24px auto auto;
+            font-size: 3rem;
+            text-shadow: 2px 2px 3px rgb(0, 0, 0);
+        }
+    }
+    .subtitle {
+        position: absolute;
+        margin: 0 auto 0 8px;
+        top: 160px;
+        text-decoration: underline;
+        text-underline-offset: 8px;
+    }
+
+    #menuDesktop {
+        display: none;
+        justify-content: center;
+        margin: 8px auto;
+        li{
+            display: flex;
+            a {
+                font-family: var(--font2);
+                font-weight: 700;
+                letter-spacing: 1px;
+                @include menuLinks;
+                margin: 4px auto 4px auto;
+                text-decoration: none;
+                box-shadow: 0 0 8px black;
+                border-radius: 32px;
+                -webkit-border-radius: 32px;
+                -moz-border-radius: 32px;
+                -ms-border-radius: 32px;
+                -o-border-radius: 32px;
+}
+            .selected {
+                color: var(--titleColour);
+                text-shadow: 1px 1px 1px #000000;
+            }
+        }
+    }
+}
+
+//main==================================================================
+#intro {
+    @include containerPhone();
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+    .title {
+         @include title();
+        margin-top: 24px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .introLeft {
+        width: 45%;
+             img {
+                display: none;
+                border-radius: 16px;
+                height: 100%;
+                padding: 16px 8px;
+                -webkit-border-radius: 16px;
+                -moz-border-radius: 16px;
+                -ms-border-radius: 16px;
+                -o-border-radius: 16px;
+            }
+        
+        }
+    .introRight{
+        @include p;
+        display: flex;
+        justify-content: center;
+        margin: 16px auto;
+        .introRightOne {
+            margin: 16px auto;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .introRightTwo {
+            display: none;
+        }
+    }
+}
+
+.nivo-controlNav {
+    margin: 16px auto
+}
+
+.introBetween {
+    @include p;
+    margin: 0 auto;
+}
+
+.title {
+    font-family: var(--font1);
+    color: var(--titleColour);
+    text-shadow: 2px 1px 2px #000000;
+    text-decoration: underline;
+    text-underline-offset: 8px;
+}
+//FOOTER====================================================================
+footer {
+    display: flex;
+    flex-direction: column;
+    @include footer();
+    .footerMenu {
+        margin-top: 32px;
+        display: flex;
+        justify-content: space-between;
+        align-content: center;
+        ul {
+            display: flex;
+            list-style: none;
+            a {
+                font-weight: 600;
+                color: black;
+                text-decoration: none;
+                margin-right: 8px;
+                font-size: 0.6rem;
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+            margin: 8px auto 0 8px;
+        }
+        .socialMediaDiver {
+            margin: -8px 12px 12px 12px;
+
+            font-size: 2.2rem;
+            .fa-youtube {
+                font-size: 8vw;
+                margin-bottom: 8px;
+                color: red;
+            }
+            .fa-square-facebook {
+                font-size: 8vw;
+                color: rgb(79, 123, 204);
+            }
+        }
+    }
+    h4 {
+        color: #C75A40;
+        font-size: 0.6rem;
+        margin: 0 auto;
+        margin-bottom: 8px;
+        align-content: flex-end;
+    }
+}
+
+//======================================================================
+//PAGES=================================================================
+//======================================================================
+
+// index================================================================
+#meetTheTeam {
+    @include containerPhone;
+    @include flexMid;
+    margin: 0 auto;
+    .title {
+        margin: 32px auto 16px auto;
+    }
+    #slider {
+        @include containerPhone;
+        margin: 8px auto 16px auto;
+        width: 80%;
+        height: 100%;
+        max-height: 300px;
+    }
+}
+#introVideo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    @include containerPhone;
+    width: 90%;
+    margin: 32px auto;
+    .title {
+        margin: 0 auto 16px auto;
+    }
+    iframe {
+        border-radius: 8px;
+        box-shadow: 0 0 8px black;
+        -webkit-border-radius: 8px;
+        -moz-border-radius: 8px;
+        -ms-border-radius: 8px;
+        -o-border-radius: 8px;
+        width: 100%;
+        height: 240px;
+        margin: 0 auto;
+    }
+}
+//A PROPOS===================================================================
+#aProposOne {
+    @include containerPhone;
+    @include flexMid;
+    margin: 0 auto;
+    .title {
+        margin: 32px auto 16px auto;
+    }
+    p {
+        @include p;
+    }
+    .photoAndP {
+        .photoAP {
+            @include containerPhone;
+            @include flexMid;
+            img {
+                box-shadow: 0 0 8px black;
+                border-radius: 16px;
+                width: 60%;
+                margin: 16px auto;
+                -webkit-border-radius: 16px;
+                -moz-border-radius: 16px;
+                -ms-border-radius: 16px;
+                -o-border-radius: 16px;
+}
+            
+        }
+    }
+    .videoContainer{
+        @include containerPhone;
+        @include flexMid;
+        iframe {
+            box-shadow: 0 0 8px black;
+            margin: 16px auto;
+            width: 90%;
+            height: 300px;
+            border-radius: 16px;
+            -webkit-border-radius: 16px;
+            -moz-border-radius: 16px;
+            -ms-border-radius: 16px;
+            -o-border-radius: 16px;
+        }
+    }
+    .aProposPOne, .aProposPTwo, .aProposPThree {
+        margin: 8px auto 16px auto;
+    }
+}
+//NOS DATES=================================================================
+.carte {
+    background-color: rgb(237, 237, 219);
+    height: 320px;
+    display: grid;
+    grid-template: repeat(8,100px) 40px repeat(7,0px) 80px / repeat(3,110px);
+    width: 200px;
+    margin: 24px auto;
+    .titre {
+        text-align: center;
+    }
+    .info{
+        padding: 8px 24px;
+        font-size: 0.9rem;
+        text-align: justify;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//CONTACT===============================================================
+
+#contactOne {
+    @include containerPhone();
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+    .title {
+        margin: 32px auto 16px auto;
+    }
+    #map {
+        margin: 0 auto;
+        max-width: 1100px;
+        width: 90%;
+    }
+        iframe {
+            border-radius: 8px;
+            box-shadow: 0 0 4px black;
+            border: none;
+            height: 300px;
+            width: 100%;
+            max-width: 1100px;
+            margin-bottom: 32px;
+            -webkit-border-radius: 8px;
+            -moz-border-radius: 8px;
+            -ms-border-radius: 8px;
+            -o-border-radius: 8px;
+        }
+}
+
+#contactTwo {
+    @include containerPhone();
+    margin: 0 auto;
+    .title {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        h2 {
+            margin: 0 auto;
+        }
+    }
+    .form {
+        @include containerPhone();
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        #formTop {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            margin: 16px auto;
+            p {
+                display: flex;
+                justify-content: center;
+                width: 100%;
+                input {
+                    font-family: var(--font2);
+                    padding: 4px;
+                    border: none;
+                    box-shadow: 0px 0px 4px black;
+                    border-radius: 16px;
+                    -webkit-border-radius: 16px;
+                    -moz-border-radius: 16px;
+                    -ms-border-radius: 16px;
+                    -o-border-radius: 16px;
+                }
+            }
+        }
+        #formBottom {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            textarea {
+                font-family: var(--font2);
+                border: none;
+                border-radius: 16px;
+                box-shadow: 0px 0px 4px black;
+                padding: 8px;
+                margin: 0 auto;
+                width: 88%;
+                -webkit-border-radius: 16px;
+                -moz-border-radius: 16px;
+                -ms-border-radius: 16px;
+                -o-border-radius: 16px;
+}
+            .button {
+                color: gray;
+                box-shadow: 0px 0px 4px var(--titleColour);
+                border: none;
+                background-color: white;
+                border-radius: 16px;
+                font-family: var(--font2);
+                padding: 8px 16px;
+                margin: 16px auto;
+                margin-bottom: 24px;
+                -webkit-border-radius: 16px;
+                -moz-border-radius: 16px;
+                -ms-border-radius: 16px;
+                -o-border-radius: 16px;
+            }
+        }
+    }
+}
+
+#contactThree {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    .title {
+        margin: 16px auto 8px auto;
+    }
+    p {
+        @include p;
+        margin: 16px auto;
+    }
+    .p2 {
+        @include p;
+        text-align: center;
+        .fa-solid {
+            border: 1px solid black;
+            border-radius: 32px;
+            padding: 8px;
+            -webkit-border-radius: 32px;
+            -moz-border-radius: 32px;
+            -ms-border-radius: 32px;
+            -o-border-radius: 32px;
+        }
+        .i2 {
+            margin: auto 4px auto 4px;
+        }
+    }
+}
+
+// DESKTOP
+@media screen and (min-width:560px){
+    #header {
+        background-color: red;
+        width: 100%;
+    }
+}

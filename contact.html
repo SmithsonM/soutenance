@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="themes/default/default.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="css/nivo-slider.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="css/lightbox.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/style.css">
+    <title>Accueil</title>
+</head>
+
+<body>
+    <header id="header">
+        <div class="logo">
+            <img src="images/fedora.png" alt="#">
+            <h1>MG Tangoargentino</h1>
+        </div>
+
+        
+
+        <div>
+            <nav  id="menu">
+                <div id="menuMobile">
+                    <a href="#">
+                    <i class="fa-solid fa-bars" id="burger"></i>
+                    </a>
+                </div>
+
+                <h1 class="title subtitle">Contact</h1>
+
+                <ul id="menuDesktop">
+                    <li><a href="index.html" class="menuLinks">Bienvenido</a></li>
+                    <li><a href="leProjet.html" class="menuLinks">Notre Projet</a></li>
+                    <li><a href="aPropos.html" class="menuLinks">A Propos</a></li>
+                    <li><a href="nosDates.html" class="menuLinks">Nos Dates</a></li>
+                    <li><a href="contact.html" class="menuLinks selected">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+
+    <main>
+        <section id="contactOne">
+            <div class="title">
+                <h2>
+                    Retrouver Nous
+                </h2>
+            </div>
+
+
+            <div id="map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2681.7804074517267!2d-3.3801568237245143!3d47.76631357120498!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48105f1c58e1fe15%3A0x823cad5a4f85be71!2sRue%20du%20Bois%20du%20Ch%C3%A2teau%2C%2056100%20Lorient!5e0!3m2!1sen!2sfr!4v1733070175257!5m2!1sen!2sfr" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </section>
+
+
+        <section id="contactTwo">
+            <div  class="title"> 
+                <h2>
+                    Besoin de nous contacter ?
+                </h2>
+            </div>
+
+            <div class="form">
+                <form action="sendmail.php" method="get">
+                    <div id="formTop">
+                        <p><input type="text" name="nom" placeholder="Votre nom ici..."></p>
+                        <p><input type="email" name="email" placeholder="Votre courriel ici..."></p>
+                    </div>
+
+                    
+                    <div id="formBottom">
+                        <textarea name="message" id="message" placeholder="Votre message ici..."></textarea>
+                        <input type="submit" value="Envoyer" class="button">
+                    </div>
+                </form>
+            </div>
+        </section>
+
+
+        <section id="contactThree">
+
+            <h2 class="title">
+                Par mail ne vous conviens pas ?
+            </h2>
+            
+            <p>
+                Vous pouvez nous contacter également via téléphone, le numero se trouve ci-dessous.
+                Retrouver nous sur Facebook et Youtube.
+            </p>
+
+            <p class="p2">
+                <i class="fa-solid fa-phone"></i> 06 22 70 01 64<i class="i2">et</i> 06 22 27 86 20
+            </p>
+            
+            <p>
+                L'association s'efforcera de vous répondre dans les meilleurs délais.
+            </p>
+        </section>
+    </main>
+
+
+    <footer id="footer">
+        <section class="footerMenu">
+            <ul>
+                <a href="index.html"><li class="footerLinks">Accueil</li></a>
+                <a href="leProjet.html"><li class="footerLinks">Notre Projet</li></a>
+                <a href="aPropos.html"><li class="footerLinks">A Propos</li></a>
+                <a href="nosDates.html"><li class="footerLinks">Nos Dates</li></a>
+                <a href="contact.html"><li class="footerLinks">Contact</li></a>
+            </ul>
+
+            <div class="socialMediaDiver">
+                <a href="https://www.facebook.com/Mgtangoargentino/"><i class="fa-brands fa-youtube"></i></a>
+                <a href="https://www.youtube.com/@bobrikkar184"><i class="fa-brands fa-square-facebook"></i></a>
+            </div>
+        </section>
+
+
+        <h4>
+            © 2024 MGTangoArgentino - All Rights Reserved.
+        </h4>
+    </footer>
+</body>
+
+<script src="scripts/jquery-1.9.0.min.js"></script>
+<script src="scripts/jquery.nivo.slider.js"></script>
+<script src="scripts/lightbox.js"></script>
+
+<script type="text/javascript">
+    $(window).load(function() {
+        $('#slider').nivoSlider();
+    });
+</script>
+
+<script>$('#menu #menuMobile #burger').click (function(){
+        $('#menu ul').slideToggle(1000);
+});
+</script>
+
+</html>
